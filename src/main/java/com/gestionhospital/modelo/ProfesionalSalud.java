@@ -1,28 +1,37 @@
 package com.gestionhospital.modelo;
 
-public abstract class ProfesionalSalud {
+import java.util.Date;
 
-    private String idProfesional;
-    private String nombre;
-    private String especialidad;
+public abstract class ProfesionalSalud extends Persona {
 
-    public ProfesionalSalud(String idProfesional, String nombre, String especialidad) {
-        this.idProfesional = idProfesional;
-        this.nombre = nombre;
+    protected String especialidad;
+    protected String horarioTrabajo;
+
+    public ProfesionalSalud(String id, String nombre, String apellido, int edad, String genero,
+                            Date fechaNacimiento, String dni, String direccion, String telefono,
+                            String correo, String especialidad, String horarioTrabajo) {
+
+        super(id, nombre, apellido, edad, genero, fechaNacimiento, dni, direccion, telefono, correo);
+
         this.especialidad = especialidad;
+        this.horarioTrabajo = horarioTrabajo;
     }
 
-    public String getIdProfesional() {
-        return idProfesional;
+    public void registrarEntrada() {
+        System.out.println(getNombre() + " registró entrada.");
     }
 
-    public String getNombre() {
-        return nombre;
+    public void registrarSalida() {
+        System.out.println(getNombre() + " registró salida.");
     }
 
     public String getEspecialidad() {
         return especialidad;
     }
-
-    public abstract void atenderPaciente();
+    public String getHorarioTrabajo() {
+        return horarioTrabajo;
+    }
+    public void setHorarioTrabajo(String horarioTrabajo) {
+        this.horarioTrabajo = horarioTrabajo;
+    }
 }

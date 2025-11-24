@@ -29,30 +29,68 @@ import java.util.Date;
             this.telefono = telefono;
             this.correo = correo;
         }
-        public String getId() {
-            return id; }
-        public String getNombre() {
-            return nombre; }
-        public String getApellido() {
-            return apellido; }
-        public int getEdad() {
-            return edad; }
-        public String getGenero() {
-            return genero; }
-        public Date getFechaNacimiento() {
-            return fechaNacimiento; }
-        public String getDni() {
-            return dni; }
-        public String getDireccion() {
-            return direccion; }
-        public String getTelefono() {
-            return telefono; }
-        public String getCorreo() {
-            return correo; }
 
-        @Override
-        public String toString() {
-            return nombre + " " + apellido;
+        public void registrar() {
+            System.out.println("Registrando: " + nombre + " " + apellido);
+        }
+
+        public void actualizarDatos() {
+            System.out.println("Actualizando datos de: " + nombre + " " + apellido);
+        }
+
+        public void verDatos() {
+            System.out.println("ID: " + id + " Nombre: " + nombre + " Apellido: " + apellido + " DNI: " + dni);
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public String getApellido() {
+            return apellido;
+        }
+
+        public int getEdad() {
+            return edad;
+        }
+
+        public String getGenero() {
+            return genero;
+        }
+
+        public Date getFechaNacimiento() {
+            return fechaNacimiento;
+        }
+
+        public String getDni() {
+            return dni;
+        }
+
+        public String getDireccion() {
+            return direccion;
+        }
+
+        public String getTelefono() {
+            return telefono;
+        }
+
+        public String getCorreo() {
+            return correo;
+        }
+
+        public void setDireccion(String direccion) {
+            this.direccion = direccion;
+        }
+
+        public void setTelefono(String telefono) {
+            this.telefono = telefono;
+        }
+
+        public void setCorreo(String correo) {
+            this.correo = correo;
         }
     }
-

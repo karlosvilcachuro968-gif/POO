@@ -26,7 +26,7 @@ public class HistorialMedico {
     }
 
     public void mostrarHistorial() {
-        System.out.println("📋 Historial médico de: " + paciente.getNombre());
+        System.out.println(" Historial médico de: " + paciente.getNombre());
         System.out.println("Diagnósticos:");
         for (String d : diagnosticos) {
             System.out.println(" - " + d);

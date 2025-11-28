@@ -11,7 +11,7 @@ public class Cirugia extends Departamento {
 
     @Override
     public void mostrarInformacion() {
-        System.out.println("🔪 Departamento de Cirugía");
+        System.out.println("Departamento de Cirugía");
         System.out.println("Nombre: " + nombre);
         System.out.println("Ubicación: " + ubicacion);
         System.out.println("Quirófanos disponibles: " + quirafanosDisponibles);

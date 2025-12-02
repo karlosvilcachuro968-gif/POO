@@ -9,7 +9,7 @@ public abstract class Departamento {
         this.ubicacion = ubicacion;
     }
 
-    // Método abstracto quelas subclases deberán implementar
+
     public abstract void mostrarInformacion();
 
 

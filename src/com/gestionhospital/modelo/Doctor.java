@@ -1,19 +1,20 @@
 package com.gestionhospital.modelo;
 
 public class Doctor {
-    private int idDoctor;
+
+    private int idDoctor; // SQL lo generará
     private String nombre;
     private String especialidad;
     private double salario;
 
-    public Doctor(int idDoctor, String nombre, String especialidad, double salario) {
-        this.idDoctor = idDoctor;
+    // Constructor SIN ID
+    public Doctor(String nombre, String especialidad, double salario) {
         this.nombre = nombre;
         this.especialidad = especialidad;
         this.salario = salario;
     }
 
-
+    // Getters
     public int getIdDoctor() {
         return idDoctor;
     }

@@ -1,58 +1,39 @@
 package com.gestionhospital.modelo;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-
 public class Cita {
 
     private int idCita;
-    private Paciente paciente;
-    private Doctor doctor;
-    private LocalDate fecha;
-    private LocalTime hora;
+    private int idPaciente;
+    private int idDoctor;
+    private String fecha;              // DATE
+    private String hora;               // TIME
     private String motivo;
     private String estado;
-    // Ej: "Programada", "Atendida" o "Cancelada"
 
-    public Cita(int idCita, Paciente paciente, Doctor doctor,
-                LocalDate fecha, LocalTime hora,
-                String motivo, String estado) {
-        this.idCita = idCita;
-        this.paciente = paciente;
-        this.doctor = doctor;
+    // Constructor SIN idCita (lo genera SQL)
+    public Cita(int idPaciente, int idDoctor, String fecha, String hora, String motivo, String estado) {
+        this.idPaciente = idPaciente;
+        this.idDoctor = idDoctor;
         this.fecha = fecha;
         this.hora = hora;
         this.motivo = motivo;
         this.estado = estado;
     }
 
-
-    public void marcarComoAtendida() {
-        this.estado = "Atendida";
+    // Getters
+    public int getIdPaciente() {
+        return idPaciente;
     }
 
-    public void cancelarCita() {
-        this.estado = "Cancelada";
+    public int getIdDoctor() {
+        return idDoctor;
     }
 
-    // Getters y Setters
-    public int getIdCita() {
-        return idCita;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public LocalDate getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public LocalTime getHora() {
+    public String getHora() {
         return hora;
     }
 
@@ -62,23 +43,5 @@ public class Cita {
 
     public String getEstado() {
         return estado;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    @Override
-    public String toString() {
-        return "Cita #" + idCita +
-                " - Paciente: " + paciente.getNombre() +
-                " - Doctor: " + doctor.getNombre() +
-                " - Fecha: " + fecha +
-                " - Hora: " + hora +
-                " - Estado: " + estado;
     }
 }

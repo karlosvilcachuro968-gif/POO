@@ -1,19 +1,23 @@
 package com.gestionhospital.modelo;
 
 public class Paciente {
-    private int idPaciente;
+
+    private int idPaciente; // SQL autogenera este ID
     private String nombre;
     private String tipoSeguro;
     private String nroHistoriaClinica;
 
-    public Paciente(int idPaciente, String nombre, String tipoSeguro, String nroHistoriaClinica) {
-        this.idPaciente = idPaciente;
+    private int idDoctor; // FK hacia Doctor
+
+    // Constructor SIN ID
+    public Paciente(String nombre, String tipoSeguro, String nroHistoriaClinica, int idDoctor) {
         this.nombre = nombre;
         this.tipoSeguro = tipoSeguro;
         this.nroHistoriaClinica = nroHistoriaClinica;
+        this.idDoctor = idDoctor;
     }
 
-
+    // Getters
     public int getIdPaciente() {
         return idPaciente;
     }
@@ -28,6 +32,10 @@ public class Paciente {
 
     public String getNroHistoriaClinica() {
         return nroHistoriaClinica;
+    }
+
+    public int getIdDoctor() {
+        return idDoctor;
     }
 
     @Override

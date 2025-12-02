@@ -24,7 +24,7 @@ public class Receta {
     }
 
     public void mostrarReceta() {
-        System.out.println("📝 Receta #" + idReceta);
+        System.out.println("Receta #" + idReceta);
         System.out.println("Paciente: " + paciente.getNombre());
         System.out.println("Doctor: " + doctor.getNombre());
         System.out.println("Medicamentos:");

@@ -22,9 +22,7 @@ public class SignosVitales {
         this.presionDiastolica = presionDiastolica;
     }
 
-    public boolean tieneFiebre() {
-        return temperatura >= 38.0;
-    }
+    public boolean tieneFiebre() { return temperatura >= 38.0; }
 
     public void mostrarSignos() {
         System.out.println("Signos vitales de " + paciente.getNombre());
@@ -34,27 +32,10 @@ public class SignosVitales {
     }
 
     // Getters
-    public int getIdSignos() {
-        return idSignos;
-    }
-
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public double getTemperatura() {
-        return temperatura;
-    }
-
-    public int getFrecuenciaCardiaca() {
-        return frecuenciaCardiaca;
-    }
-
-    public int getPresionSistolica() {
-        return presionSistolica;
-    }
-
-    public int getPresionDiastolica() {
-        return presionDiastolica;
-    }
+    public int getIdSignos() { return idSignos; }
+    public Paciente getPaciente() { return paciente; }
+    public double getTemperatura() { return temperatura; }
+    public int getFrecuenciaCardiaca() { return frecuenciaCardiaca; }
+    public int getPresionSistolica() { return presionSistolica; }
+    public int getPresionDiastolica() { return presionDiastolica; }
 }

@@ -17,11 +17,6 @@ public class Psicologia extends Departamento {
         System.out.println("Sesiones disponibles: " + sesionesDisponibles);
     }
 
-    public int getSesionesDisponibles() {
-        return sesionesDisponibles;
-    }
-
-    public void setSesionesDisponibles(int sesionesDisponibles) {
-        this.sesionesDisponibles = sesionesDisponibles;
-    }
+    public int getSesionesDisponibles() { return sesionesDisponibles; }
+    public void setSesionesDisponibles(int sesionesDisponibles) { this.sesionesDisponibles = sesionesDisponibles; }
 }

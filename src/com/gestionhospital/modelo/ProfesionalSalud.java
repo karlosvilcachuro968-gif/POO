@@ -12,7 +12,6 @@ public abstract class ProfesionalSalud extends Persona {
                             String correo, String especialidad, String horarioTrabajo) {
 
         super(id, nombre, apellido, edad, genero, fechaNacimiento, dni, direccion, telefono, correo);
-
         this.especialidad = especialidad;
         this.horarioTrabajo = horarioTrabajo;
     }
@@ -25,13 +24,7 @@ public abstract class ProfesionalSalud extends Persona {
         System.out.println(getNombre() + " registró salida.");
     }
 
-    public String getEspecialidad() {
-        return especialidad;
-    }
-    public String getHorarioTrabajo() {
-        return horarioTrabajo;
-    }
-    public void setHorarioTrabajo(String horarioTrabajo) {
-        this.horarioTrabajo = horarioTrabajo;
-    }
+    public String getEspecialidad() { return especialidad; }
+    public String getHorarioTrabajo() { return horarioTrabajo; }
+    public void setHorarioTrabajo(String horarioTrabajo) { this.horarioTrabajo = horarioTrabajo; }
 }

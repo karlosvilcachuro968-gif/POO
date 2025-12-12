@@ -36,14 +36,7 @@ public class Farmacia {
         }
     }
 
-    public void agregarMedicamentoAlStock(Medicamento m) {
-        listaMedicamentos.add(m);
-    }
-
-    public ProfesionalSalud getEncargado() {
-        return encargado;
-    }
-    public List<Medicamento> getListaMedicamentos() {
-        return listaMedicamentos;
-    }
+    public void agregarMedicamentoAlStock(Medicamento m) { listaMedicamentos.add(m); }
+    public ProfesionalSalud getEncargado() { return encargado; }
+    public List<Medicamento> getListaMedicamentos() { return listaMedicamentos; }
 }

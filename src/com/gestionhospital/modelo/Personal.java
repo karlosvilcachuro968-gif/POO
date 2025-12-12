@@ -16,10 +16,8 @@ public class Personal extends Persona {
         this.salario = salario;
     }
 
-    public String getRol() {
-        return rol; }
-    public float getSalario() {
-        return salario; }
+    public String getRol() { return rol; }
+    public float getSalario() { return salario; }
 
     public void ayudarPaciente(Paciente paciente) {
         System.out.println(getNombre() + " está ayudando al paciente " + paciente.getNombre());
@@ -29,17 +27,7 @@ public class Personal extends Persona {
         System.out.println(getNombre() + " está apoyando al doctor " + doctor.getNombre());
     }
 
-    public void registrar() {
-        System.out.println("Registrando personal: " + getNombre());
-    }
-
-    public void actualizarDatos() {
-        System.out.println("Actualizando datos de personal: " + getNombre());
-    }
-
-    public void verDatos() {
-        System.out.println("Datos de personal: " + toString());
-    }
+    public void registrar() { System.out.println("Registrando personal: " + getNombre()); }
+    public void actualizarDatos() { System.out.println("Actualizando datos de personal: " + getNombre()); }
+    public void verDatos() { System.out.println("Datos de personal: " + toString()); }
 }
-
-

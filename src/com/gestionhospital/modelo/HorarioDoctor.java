@@ -4,9 +4,9 @@ public class HorarioDoctor {
 
     private int idHorario;
     private Doctor doctor;
-    private String diaSemana;  // Lunes, Martes, etc.
-    private String horaInicio; // "08:00"
-    private String horaFin;    // "14:00"
+    private String diaSemana;
+    private String horaInicio;
+    private String horaFin;
     private boolean disponible;
 
     public HorarioDoctor(int idHorario, Doctor doctor,
@@ -20,38 +20,15 @@ public class HorarioDoctor {
         this.disponible = disponible;
     }
 
-    public void marcarNoDisponible() {
-        this.disponible = false;
-    }
+    public void marcarNoDisponible() { this.disponible = false; }
+    public void marcarDisponible() { this.disponible = true; }
 
-    public void marcarDisponible() {
-        this.disponible = true;
-    }
-
-    // Getters
-    public int getIdHorario() {
-        return idHorario;
-    }
-
-    public Doctor getDoctor() {
-        return doctor;
-    }
-
-    public String getDiaSemana() {
-        return diaSemana;
-    }
-
-    public String getHoraInicio() {
-        return horaInicio;
-    }
-
-    public String getHoraFin() {
-        return horaFin;
-    }
-
-    public boolean isDisponible() {
-        return disponible;
-    }
+    public int getIdHorario() { return idHorario; }
+    public Doctor getDoctor() { return doctor; }
+    public String getDiaSemana() { return diaSemana; }
+    public String getHoraInicio() { return horaInicio; }
+    public String getHoraFin() { return horaFin; }
+    public boolean isDisponible() { return disponible; }
 
     @Override
     public String toString() {

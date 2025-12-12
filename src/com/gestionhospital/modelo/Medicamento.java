@@ -14,9 +14,7 @@ public class Medicamento {
         this.precioUnitario = precioUnitario;
     }
 
-    public boolean comprobarDisponibilidad() {
-        return cantidadDisponible > 0;
-    }
+    public boolean comprobarDisponibilidad() { return cantidadDisponible > 0; }
 
     public void proporcionar(int cantidad) {
         if (cantidad <= cantidadDisponible) {
@@ -32,16 +30,8 @@ public class Medicamento {
         System.out.println("Stock actualizado para " + nombre + ". Nuevo stock: " + cantidadDisponible);
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-    public String getCodigo() {
-        return codigo;
-    }
-    public int getCantidadDisponible() {
-        return cantidadDisponible;
-    }
-    public float getPrecioUnitario() {
-        return precioUnitario;
-    }
+    public String getNombre() { return nombre; }
+    public String getCodigo() { return codigo; }
+    public int getCantidadDisponible() { return cantidadDisponible; }
+    public float getPrecioUnitario() { return precioUnitario; }
 }

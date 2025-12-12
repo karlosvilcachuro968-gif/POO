@@ -2,26 +2,28 @@ package com.gestionhospital.modelo;
 
 public class Cirugia extends Departamento {
 
-    private int quirofanosDisponibles;
+    private int quirafanosDisponibles;
+    private String fechaProgramada; // opcional
 
+    // Constructor compatible con Main: (nombre, ubicacion, quirafanos)
     public Cirugia(String nombre, String ubicacion, int quirafanosDisponibles) {
         super(nombre, ubicacion);
-        this.quirofanosDisponibles = quirafanosDisponibles;
+        this.quirafanosDisponibles = quirafanosDisponibles;
+        this.fechaProgramada = null;
     }
+
+    public Cirugia(String nombre, String ubicacion, String fechaProgramada, int quirafanosDisponibles) {
+        super(nombre, ubicacion);
+        this.fechaProgramada = fechaProgramada;
+        this.quirafanosDisponibles = quirafanosDisponibles;
+    }
+
+    public int getQuirafanosDisponibles() { return quirafanosDisponibles; }
+    public String getFechaProgramada() { return fechaProgramada; }
+    public void setFechaProgramada(String fechaProgramada) { this.fechaProgramada = fechaProgramada; }
 
     @Override
     public void mostrarInformacion() {
-        System.out.println("Departamento de Cirugía");
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Ubicación: " + ubicacion);
-        System.out.println("Quirófanos disponibles: " + quirofanosDisponibles);
-    }
-
-    public int getQuirafanosDisponibles() {
-        return quirofanosDisponibles;
-    }
-
-    public void setQuirafanosDisponibles(int quirafanosDisponibles) {
-        this.quirofanosDisponibles = quirafanosDisponibles;
+        System.out.println("Cirugía: " + nombre + " | Ubicación: " + ubicacion + " | Quirófanos: " + quirafanosDisponibles);
     }
 }

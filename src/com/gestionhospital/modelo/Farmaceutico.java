@@ -12,22 +12,17 @@ public class Farmaceutico extends ProfesionalSalud {
                         String especialidad, String horarioTrabajo,
                         String licenciaFarmaceutica, String areaFarmacia) {
 
-        super(id, nombre, apellido, edad, genero, fechaNacimiento,
-                dni, direccion, telefono, correo, especialidad, horarioTrabajo);
+        super(id, nombre, apellido, edad, genero, fechaNacimiento, dni, direccion, telefono, correo, especialidad, horarioTrabajo);
 
         this.licenciaFarmaceutica = licenciaFarmaceutica;
         this.areaFarmacia = areaFarmacia;
     }
 
-    public void gestionarMedicamentos() {
-        System.out.println(getNombre() + " gestiona el stock del área: " + areaFarmacia);
-    }
+    public void gestionarMedicamentos() { System.out.println(getNombre() + " gestiona el stock del área: " + areaFarmacia); }
 
     public void verificarPrescripciones(Receta receta) {
         System.out.println(getNombre() + " verifica la receta " + receta.getIdReceta() + " para el paciente " + receta.getPaciente().getNombre());
     }
 
-    public String getLicenciaFarmaceutica() {
-        return licenciaFarmaceutica;
-    }
+    public String getLicenciaFarmaceutica() { return licenciaFarmaceutica; }
 }

@@ -8,60 +8,44 @@ public class ReservaDeHabitaciones {
     private List<HabitacionesDeEmergencia> habitaciones;
 
     public ReservaDeHabitaciones() {
-        this.habitaciones = new ArrayList<>();
+        habitaciones = new ArrayList<>();
     }
 
-    public void agregarHabitacion(HabitacionesDeEmergencia h) {
-        habitaciones.add(h);
+    public void agregarHabitacion(HabitacionesDeEmergencia habitacion) {
+        habitaciones.add(habitacion);
     }
 
-    public List<HabitacionesDeEmergencia> obtenerDisponibles() {
-        List<HabitacionesDeEmergencia> libres = new ArrayList<>();
-
+    public void asignarPacienteCritico(int idPaciente) {
         for (HabitacionesDeEmergencia h : habitaciones) {
             if (!h.isOcupado()) {
-                libres.add(h);
+                h.asignarPacienteCritico(idPaciente);
+                return;
             }
         }
-        return libres;
+        System.out.println("No hay habitaciones disponibles para pacientes críticos.");
     }
 
-    public boolean reservarHabitacion(int prioridad, String pacienteId) {
+    public void liberarHabitacion(int idHabitacion) {
         for (HabitacionesDeEmergencia h : habitaciones) {
-            if (!h.isOcupado() && h.getPrioridadAtencion() == prioridad) {
-                h.asignarPacienteCritico(pacienteId);
-                System.out.println("Habitación asignada al paciente: " + pacienteId);
-                return true;
+            if (h.getIdHabitacion() == idHabitacion) {
+                h.liberarHabitacionEmergencia();
+                return;
             }
         }
-        System.out.println("No hay habitaciones disponibles con prioridad " + prioridad);
-        return false;
+        System.out.println("Habitación no encontrada.");
     }
 
-    public void liberarHabitacion(HabitacionesDeEmergencia h) {
-        if (h.isOcupado()) {
-            h.liberarHabitacionEmergencia();
-        } else {
-            System.out.println("La habitación ya está libre.");
+    public void mostrarEquipamiento() {
+        for (HabitacionesDeEmergencia h : habitaciones) {
+            System.out.println("Habitación ID: " + h.getIdHabitacion() +
+                    " - Equipamiento completo: " + h.verificarEquipamiento());
         }
     }
 
-    public List<HabitacionesDeEmergencia> buscarPorPrioridad(int prioridad) {
-        List<HabitacionesDeEmergencia> resultado = new ArrayList<>();
+    public void listarHabitaciones() {
         for (HabitacionesDeEmergencia h : habitaciones) {
-            if (h.getPrioridadAtencion() == prioridad) {
-                resultado.add(h);
-            }
-        }
-        return resultado;
-    }
-
-    public void mostrarHabitaciones() {
-        System.out.println("Habitaciones de Emergencia:");
-        for (HabitacionesDeEmergencia h : habitaciones) {
-            System.out.println("- Prioridad " + h.getPrioridadAtencion() +
-                    " Equipamiento: " + h.verificarEquipamiento() +
-                    " Ocupada: " + h.isOcupado());
+            h.mostrarInfo();
+            System.out.println("------------------------");
         }
     }
 }

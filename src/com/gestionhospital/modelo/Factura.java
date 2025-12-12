@@ -36,11 +36,6 @@ public class Factura {
         System.out.println("Detalle: " + detalle);
     }
 
-    public float calcularTotal() {
-        return total;
-    }
-
-    public String getIdFactura() {
-        return idFactura;
-    }
+    public float calcularTotal() { return total; }
+    public String getIdFactura() { return idFactura; }
 }
